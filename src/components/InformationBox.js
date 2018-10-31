@@ -1,8 +1,9 @@
 import React from 'react';
+import LocationImage from './LocationImage';
 
 const InformationBox = (props) => {
     return (
-        <img src={props.imageUrl} />
+        <LocationImage imageUrl={props.imageUrl}/>
     )
 }
 

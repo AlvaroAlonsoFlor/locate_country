@@ -8,8 +8,11 @@ export default class LocationContainer extends Component {
         super(props);
         this.state = {
             imageUrl: null,
-            countries: []
+            countries: [],
+            currentCountry: null
         }
+
+        this.handleChangeCountry = this.handleChangeCountry.bind(this);
     }
 
 
@@ -28,10 +31,15 @@ export default class LocationContainer extends Component {
         
     }
 
+    handleChangeCountry(index) {
+        const selectedCountry = this.state.countries[index];
+        this.setState({currentCountry: selectedCountry})
+    }
+
     render() {
         return (
             <div>
-                <CountriesDropdown countries={this.state.countries}/>
+                <CountriesDropdown countries={this.state.countries} onChangeCountry={this.handleChangeCountry}/>
                 <InformationBox imageUrl={this.state.imageUrl}/> 
             </div>
         );

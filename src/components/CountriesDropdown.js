@@ -8,8 +8,12 @@ const CountriesDropdown = (props) => {
         );
     })
 
+    function handleChange(event) {
+        props.onChangeCountry(event.target.value);
+    }
+
     return(
-        <select onChange={''} defaultValue="default">
+        <select onChange={handleChange} defaultValue="default">
             <option disabled value="default">Choose a country</option>
             {options}
         </select>

@@ -1,9 +1,14 @@
 import React from 'react';
 import LocationImage from './LocationImage';
+import OtherInfo from './OtherInfo';
 
 const InformationBox = (props) => {
     return (
-        <LocationImage imageUrl={props.imageUrl}/>
+        <div>
+            <LocationImage imageUrl={props.imageUrl}/>
+            <OtherInfo country={props.currentCountry}/>
+        </div>
+        
     )
 }
 

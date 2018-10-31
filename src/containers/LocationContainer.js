@@ -40,7 +40,7 @@ export default class LocationContainer extends Component {
         return (
             <div>
                 <CountriesDropdown countries={this.state.countries} onChangeCountry={this.handleChangeCountry}/>
-                <InformationBox imageUrl={this.state.imageUrl}/> 
+                <InformationBox imageUrl={this.state.imageUrl} currentCountry={this.state.currentCountry}/> 
             </div>
         );
     }

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import InformationBox from '../components/InformationBox.js'
 
 export default class LocationContainer extends Component {
 
@@ -18,7 +19,7 @@ export default class LocationContainer extends Component {
 
     render() {
         return (
-            <h2>Container working!</h2>
+            <InformationBox imageUrl={this.state.imageUrl}/>
         );
     }
 }

@@ -1,0 +1,27 @@
+.info-box {
+    margin-top: 3em;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    box-shadow: 0 10px 6px -6px #777;
+    max-height: 22em;
+    font-variant: small-caps;
+}
+
+.location-image {
+    margin: 0.3em;
+    border: 0.1em black solid;
+    width: 20em;
+    height: 20em;
+}
+
+.other-info {
+    margin-left: 6em;
+}
+
+.flag-image {
+    /* width: 10em; */
+    height: 30%;
+    box-shadow: 0 10px 6px -6px #777;
+    border: 1px solid black;
+}

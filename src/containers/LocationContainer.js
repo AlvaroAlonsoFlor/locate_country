@@ -19,14 +19,7 @@ export default class LocationContainer extends Component {
     componentDidMount() {
         fetch('https://restcountries.eu/rest/v2/all')
             .then(response => response.json())
-            .then(countries => this.setState({countries: countries}) )
-            .then(() => {
-                fetch('https://api.nasa.gov/planetary/earth/imagery/?lon=-3.18&lat=55.95&dim=0.122&cloud_score=True&api_key=pRV8OiANGrU9cEF806ZYsE9FdesQCvGBGoB6Iq9m')
-                    .then(response => response.json())
-                    .then(imageInfo => this.setState({
-                        imageUrl: imageInfo.url
-                    }))
-            })
+            .then(countries => this.setState({countries: countries}))
 
         
     }
@@ -34,6 +27,18 @@ export default class LocationContainer extends Component {
     handleChangeCountry(index) {
         const selectedCountry = this.state.countries[index];
         this.setState({currentCountry: selectedCountry})
+
+        const lat = selectedCountry.latlng[0];
+        const long = selectedCountry.latlng[1];
+
+        console.log(lat);
+        console.log(long);
+       
+        fetch(`https://api.nasa.gov/planetary/earth/imagery/?lon=${long}&lat=${lat}&date=2015-07-16&dim=0.025&cloud_score=True&api_key=pRV8OiANGrU9cEF806ZYsE9FdesQCvGBGoB6Iq9m`)
+            .then(response => response.json())
+            .then(imageInfo => this.setState({
+                imageUrl: imageInfo.url
+            }))
     }
 
     render() {

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import LocationContainer from './containers/LocationContainer';
 
 class App extends Component {
   render() {
     return (
-     <h1>It is working!</h1>
+     <LocationContainer />
+
     );
   }
 }
